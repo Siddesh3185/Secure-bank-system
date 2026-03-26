@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Secure Bank{% endblock %}
+
+{% block content %}
+<div class="site-container">
+    <div class="hero-grid">
+        <div class="hero-left">
+            <h1 class="fw-bold">Welcome to Secure Bank</h1>
+            <p class="subtitle text-white-50">Fast, secure and reliable banking</p>
+            <p class="lead text-white-50 mt-3">Manage deposits, withdrawals and transfers with confidence. Access your account anytime, anywhere.</p>
+
+            <div class="hero-cta mt-4 d-flex gap-3">
+                <a href="/register" class="btn btn-primary btn-lg">Create Account</a>
+                <a href="/login" class="btn btn-outline-light btn-lg">Login</a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="feature-card text-center">
+                <div class="mb-3">
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4b0.svg" alt="secure" width="64" height="64">
+                </div>
+                <h3 class="mb-2">Secure, Fast, Reliable</h3>
+                <p class="text-white-50">Your money is protected — simple tools to manage your accounts anytime.</p>
+                <ul class="feature-list mt-3">
+                    <li>Instant deposits & withdrawals</li>
+                    <li>Encrypted transactions</li>
+                    <li>24/7 account access</li>
+                </ul>
+                <div class="mt-4">
+                    <a href="/dashboard" class="btn btn-light">Go to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - Secure Bank{% endblock %}
+
+{% block content %}
+<div class="container register py-5" style="max-width:480px;">
+    <h2 class="text-white mb-4">Create Account</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Full Name" required class="form-control mb-3">
+        <input type="email" name="email" placeholder="Email" required class="form-control mb-3">
+        <input type="password" name="password" placeholder="Password" required class="form-control mb-3">
+        <button type="submit" class="btn btn-success w-100">Register</button>
+    </form>
+    <br>
+    <a href="/login" class="text-white">Already have account?</a>
+</div>
+{% endblock %}

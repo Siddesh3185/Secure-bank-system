@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Transfer - Secure Bank{% endblock %}
+
+{% block content %}
+<div class="container transfer py-5" style="max-width:480px;">
+    <h2 class="text-white mb-4">Transfer Money</h2>
+    <form method="POST">
+        <input type="email" name="email" placeholder="Receiver Email" required class="form-control mb-3">
+        <input type="number" name="amount" placeholder="Amount" required class="form-control mb-3 text-center">
+        <button type="submit" class="btn btn-warning w-100 text-dark">Transfer</button>
+    </form>
+</div>
+{% endblock %}

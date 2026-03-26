@@ -1,0 +1,370 @@
+/* Animated Gradient Background */
+/*body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Glass Card */
+/*.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Inputs */
+/*input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* Buttons */
+/*button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h2, h3 {
+    margin-bottom: 20px;
+}
+
+/* ===== Global Styles (Already yours) ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f1724 0%, #122639 40%, #18354a 100%);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: #ffffff;
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Glass Card (use an explicit class so we don't override Bootstrap .container) */
+.glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    padding: 28px;
+    border-radius: 14px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+}
+
+/* Page layout helpers */
+:root{
+    --nav-height: 68px;
+}
+.main-content {
+    min-height: calc(100vh - var(--nav-height));
+    padding: 48px 16px;
+    display: flex;
+    align-items: center;
+}
+.site-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Inputs */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* Buttons: use Bootstrap's button styles by default. 
+   Custom button styles can be applied with the .btn-custom class. */
+.btn-custom {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    background: #0056b3;
+    transform: scale(1.03);
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h2, h3 {
+    margin-bottom: 20px;
+}
+
+/* ===== Dashboard Page ===== */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dashboard .btn {
+    width: 100%;
+}
+
+/* ===== Home Page ===== */
+.hero-grid {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+.hero-left {
+    flex: 1 1 55%;
+}
+.hero-right {
+    flex: 0 0 420px;
+}
+.hero-left h1 {
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1.05;
+}
+.hero-left p.lead {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.85);
+}
+.hero-cta .btn {
+    min-width: 160px;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.hero-cta .btn:hover{ transform: translateY(-3px); box-shadow: 0 8px 20px rgba(2,6,23,0.45); }
+.feature-card {
+    padding: 26px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    box-shadow: 0 12px 30px rgba(2,6,23,0.6);
+}
+.feature-card h3{ margin-bottom: 8px; }
+.feature-list { list-style: none; padding: 0; margin: 12px 0 0 0; }
+.feature-list li{ margin: 8px 0; color: rgba(255,255,255,0.85); }
+
+/* ===== Login Page ===== */
+.login input {
+    background: rgba(255,255,255,0.8);
+}
+
+.login .btn {
+    width: 100%;
+}
+
+/* ===== Register Page ===== */
+.register input {
+    background: rgba(255,255,255,0.8);
+}
+
+.register .btn {
+    width: 100%;
+}
+
+/* ===== Deposit Page ===== */
+.deposit input {
+    text-align: center;
+    font-size: 18px;
+}
+
+.deposit .btn-primary {
+    width: 100%;
+    background: #28a745;
+    border-color: #28a745;
+}
+
+.deposit .btn-primary:hover {
+    background: #1e7e34;
+    border-color: #1e7e34;
+}
+
+/* ===== Withdraw Page ===== */
+.withdraw .btn-danger {
+    width: 100%;
+    background: #dc3545;
+    border-color: #dc3545;
+}
+
+.withdraw .btn-danger:hover {
+    background: #a71d2a;
+    border-color: #a71d2a;
+}
+
+/* ===== Transfer Page ===== */
+.transfer input {
+    text-align: center;
+}
+
+.transfer .btn-warning {
+    width: 100%;
+    background: #ffc107;
+    color: black;
+    border-color: #ffc107;
+}
+
+.transfer .btn-warning:hover {
+    background: #e0a800;
+    border-color: #e0a800;
+}
+
+/* ===== Extra Styling ===== */
+.card {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+}
+
+/* ===== Tabbed Dashboard Styles ===== */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.tab-btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.04);
+    cursor: pointer;
+}
+.tab-btn.active {
+    background: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+.tab-panel {
+    display: none;
+    padding: 12px;
+}
+.tab-panel.active {
+    display: block;
+}
+.tab-panel .form-control {
+    background: rgba(255,255,255,0.9);
+}
+
+@media (max-width: 576px) {
+    .tabs { flex-direction: column; }
+}
+
+/* Navbar styles and responsiveness */
+.navbar {
+    background: linear-gradient(180deg, rgba(6,8,15,0.6), rgba(6,8,15,0.35));
+    backdrop-filter: blur(6px);
+    height: var(--nav-height);
+    box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+}
+.navbar .navbar-brand { font-weight:700; display:flex; gap:8px; align-items:center; }
+.navbar .nav-link { color: rgba(255,255,255,0.85); transition: color .15s ease, transform .12s ease; }
+.navbar .nav-link:hover { color: #ffffff; transform: translateY(-2px); }
+.navbar .btn-outline-light { border-radius: 10px; }
+
+@media (max-width: 992px) {
+    .hero-grid { flex-direction: column-reverse; gap: 20px; }
+    .hero-right { width: 100%; }
+    .main-content { padding: 30px 12px; }
+}
+
+@media (max-width: 480px) {
+    .hero-left h1 { font-size: 26px; }
+    .hero-left p.lead { font-size: 1rem; }
+}
+
+/* ===== Horizontal Dashboard Layout ===== */
+.dashboard-horizontal {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+}
+.dashboard-horizontal .hero {
+    flex: 1 1 60%;
+    padding: 36px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+}
+.dashboard-horizontal .hero h1 {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+.dashboard-horizontal .hero p {
+    color: rgba(255,255,255,0.8);
+    max-width: 42rem;
+}
+.dashboard-horizontal .sidebar {
+    width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.dashboard-horizontal .tabs { flex-direction: column; }
+.dashboard-horizontal .tab-btn {
+    width: 100%;
+    text-align: left;
+    padding: 12px 14px;
+    border-radius: 10px;
+}
+.dashboard-horizontal .tab-btn.active {
+    background: rgba(255,255,255,0.95);
+    color: #0d6efd;
+    border-color: rgba(0,0,0,0.08);
+}
+
+@media (max-width: 992px) {
+    .dashboard-horizontal { flex-direction: column; }
+    .dashboard-horizontal .sidebar { width: 100%; }
+}

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Secure Bank{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="dashboard-horizontal">
+                <div class="hero card p-4">
+                    <h1>Welcome to Secure Bank</h1>
+                    <p class="lead">Fast, secure and friendly banking. Manage deposits, withdrawals and transfers with confidence. Your balance is shown on the right — use the quick actions to move money.</p>
+
+                    <div class="mt-4">
+                        <p class="mb-1"><strong>Account:</strong> {{ session['name'] }}</p>
+                        <p class="mb-0"><strong>Balance:</strong> <span class="badge bg-light text-dark">₹ {{ balance }}</span></p>
+                    </div>
+
+                    <div class="mt-4 d-flex gap-2">
+                        <a href="#" class="btn btn-outline-light">Profile</a>
+                        <a href="/logout" class="btn btn-outline-secondary">Logout</a>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="tabs" role="tablist" aria-label="Account actions">
+                        <button class="tab-btn active" data-target="#tab-deposit" role="tab" aria-selected="true">Deposit</button>
+                        <button class="tab-btn" data-target="#tab-withdraw" role="tab" aria-selected="false">Withdraw</button>
+                        <button class="tab-btn" data-target="#tab-transfer" role="tab" aria-selected="false">Transfer</button>
+                        <button class="tab-btn" data-target="#tab-activity" role="tab" aria-selected="false">Activity</button>
+                    </div>
+
+                    <div class="tab-panel active" id="tab-deposit" role="tabpanel">
+                        <h6>Deposit</h6>
+                        <form action="/deposit" method="post" class="mt-2">
+                            <div class="mb-2">
+                                <input name="amount" type="number" step="0.01" min="0.01" class="form-control" placeholder="Amount (₹)" required>
+                            </div>
+                            <button class="btn btn-primary w-100">Deposit</button>
+                        </form>
+                    </div>
+
+                    <div class="tab-panel" id="tab-withdraw" role="tabpanel">
+                        <h6>Withdraw</h6>
+                        <form action="/withdraw" method="post" class="mt-2">
+                            <div class="mb-2">
+                                <input name="amount" type="number" step="0.01" min="0.01" class="form-control" placeholder="Amount (₹)" required>
+                            </div>
+                            <button class="btn btn-danger w-100">Withdraw</button>
+                        </form>
+                    </div>
+
+                    <div class="tab-panel" id="tab-transfer" role="tabpanel">
+                        <h6>Transfer</h6>
+                        <form action="/transfer" method="post" class="mt-2">
+                            <div class="mb-2">
+                                <input name="to_account" type="text" class="form-control" placeholder="Recipient account (ID)" required>
+                            </div>
+                            <div class="mb-2">
+                                <input name="amount" type="number" step="0.01" min="0.01" class="form-control" placeholder="Amount (₹)" required>
+                            </div>
+                            <button class="btn btn-warning text-dark w-100">Transfer</button>
+                        </form>
+                    </div>
+
+                    <div class="tab-panel" id="tab-activity" role="tabpanel">
+                        <h6>Activity</h6>
+                        <ul class="list-group mt-2">
+                            <li class="list-group-item bg-transparent text-white-50">No recent transactions — make a deposit to get started.</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function(){
+        const tabs = document.querySelectorAll('.tab-btn');
+        const panels = document.querySelectorAll('.tab-panel');
+
+        function activate(targetBtn){
+            tabs.forEach(b => {
+                const active = b === targetBtn;
+                b.classList.toggle('active', active);
+                b.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            panels.forEach(p => p.classList.toggle('active', ('#'+p.id) === targetBtn.dataset.target));
+        }
+
+        tabs.forEach(btn => btn.addEventListener('click', ()=> activate(btn)));
+    })();
+</script>
+{% endblock %}
