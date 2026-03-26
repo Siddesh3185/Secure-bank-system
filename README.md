@@ -18,6 +18,7 @@ A simple, educational Flask-based banking system that demonstrates core banking 
 Backend: Python 3.8+, Flask
 Database: SQLite
 Frontend: HTML, CSS (Flask Templates)
+
 📂 Project Structure
 Secure-bank-system/
 │
@@ -37,6 +38,7 @@ Secure-bank-system/
 ├── static/              # CSS and assets
 │
 └── README.md
+
 ⚙️ Getting Started
 1️⃣ Clone the Repository
 git clone https://github.com/Siddesh3185/Secure-bank-system.git
